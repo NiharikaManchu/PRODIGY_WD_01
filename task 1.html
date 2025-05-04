@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Skincare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pastel-blue: #aec6cf;
+      --pastel-peach: #ffd8cb;
+      --pastel-yellow: #fffacd;
+      --pastel-mint: #d0f0c0;
+      --pastel-lavender: #e6e6fa;
+      --pastel-green: #ccffcc;
+      --pastel-pink: #ffccd5;
+      --pastel-gray: #f5f5f5;
+      --text-black: #000000;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--pastel-mint);
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: var(--pastel-blue);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      transition: background-color 0.3s;
+    }
+
+    header.scrolled {
+      background-color: var(--pastel-peach);
+    }
+
+    .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.8rem;
+      color: var(--text-black);
+    }
+
+    nav a {
+      margin: 0 0.8rem;
+      text-decoration: none;
+      color: var(--text-black);
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: var(--pastel-yellow);
+    }
+
+    .section {
+      display: none;
+      min-height: 100vh;
+      padding: 6rem 2rem 2rem;
+      transition: all 0.3s;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    #home { background-color: var(--pastel-lavender); }
+    #about { background-color: var(--pastel-mint); color: #333; }
+    #products { background-color: var(--pastel-pink); }
+    #tips { background-color: var(--pastel-yellow); }
+    #contact { background-color: var(--pastel-gray); }
+
+    .product, .tip {
+      background: white;
+      padding: 1rem;
+      margin: 1rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .feedback {
+      margin-top: 2rem;
+    }
+
+    .feedback input, .feedback textarea {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <header id="navbar">
+    <div class="logo">My Skincare</div>
+    <nav>
+      <a href="#" onclick="showSection('home')">Home</a>
+      <a href="#" onclick="showSection('about')">About</a>
+      <a href="#" onclick="showSection('products')">Products</a>
+      <a href="#" onclick="showSection('tips')">Skincare Tips</a>
+      <a href="#" onclick="showSection('contact')">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home" class="section active">
+    <h1>Welcome to My Skincare</h1>
+    <p>Your go-to destination for glowing, healthy skin with the cutest vibes!</p>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About Us</h2>
+    <p>We believe skincare should be fun, calming, and effective. We combine pastel aesthetics with science-backed tips to help you achieve your best skin.</p>
+  </section>
+
+  <section id="products" class="section">
+    <h2>Skincare Products</h2>
+    <div class="product">Rose Water Mist</div>
+    <div class="product">Aloe Vera Gel</div>
+    <div class="product">Gentle Foaming Cleanser</div>
+    <div class="product">Pastel Lip Balm Set</div>
+  </section>
+
+  <section id="tips" class="section">
+    <h2>Skincare Tips</h2>
+    <div class="tip">Tip 1: Always remove makeup before sleeping.</div>
+    <div class="tip">Tip 2: Hydrate with cute water bottles!</div>
+    <div class="tip">Tip 3: Use sunscreen, even indoors.</div>
+    <div class="tip">Tip 4: Moisturize morning and night!</div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>Email: skincare@example.com</p>
+    <p>Phone: 1234567890</p>
+    <div class="feedback">
+      <h3>We’d love your feedback!</h3>
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <textarea rows="4" placeholder="Your feedback..."></textarea>
+    </div>
+  </section>
+
+  <script>
+    const nav = document.getElementById("navbar");
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("scrolled", window.scrollY > 50);
+    });
+
+    function showSection(id) {
+      document.querySelectorAll(".section").forEach(sec => sec.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+  </script>
+</body>
+</html>
