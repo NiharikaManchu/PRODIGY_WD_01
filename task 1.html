@@ -15,6 +15,7 @@
       --pastel-green: #ccffcc;
       --pastel-pink: #ffccd5;
       --pastel-gray: #f5f5f5;
+      --nav-pink: #FFB6C1;
       --text-black: #000000;
     }
 
@@ -27,13 +28,15 @@
 
     body {
       background-color: var(--pastel-mint);
+      font-size: 1rem;
+      color: var(--text-black);
     }
 
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      background-color: var(--pastel-blue);
+      background-color: var(--nav-pink);
       padding: 1rem;
       display: flex;
       justify-content: space-between;
@@ -48,7 +51,7 @@
 
     .logo {
       font-family: 'Pacifico', cursive;
-      font-size: 1.8rem;
+      font-size: 2rem;
       color: var(--text-black);
     }
 
@@ -77,22 +80,32 @@
       display: block;
     }
 
-    #home { background-color: var(--pastel-lavender); }
-    #about { background-color: var(--pastel-mint); color: #333; }
-    #products { background-color: var(--pastel-pink); }
-    #tips { background-color: var(--pastel-yellow); }
-    #contact { background-color: var(--pastel-gray); }
+    #home {
+      background-color: #dbefff;
+      text-align: center;
+    }
 
-    .product, .tip {
+    #about { background-color: var(--pastel-green); color: #333; text-align: center; }
+    #products { background-color: var(--pastel-peach); text-align: center; }
+    #tips { background-color: var(--pastel-yellow); text-align: center; }
+    #contact { background-color: var(--pastel-gray); text-align: center; }
+
+    h1, h2, h3 {
+      font-family: 'Pacifico', cursive;
+      color: var(--text-black);
+    }
+
+    .tip {
       background: white;
       padding: 1rem;
       margin: 1rem;
       border-radius: 20px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
     }
 
-    .feedback {
-      margin-top: 2rem;
+    .tip:hover {
+      transform: scale(1.05);
     }
 
     .feedback input, .feedback textarea {
@@ -104,6 +117,26 @@
       border-radius: 10px;
     }
 
+    .feedback {
+      margin-top: 2rem;
+    }
+
+    /* Cute buttons */
+    .cute-button {
+      background-color: var(--pastel-pink);
+      color: var(--text-black);
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+      display: inline-block;
+      margin: 1rem;
+    }
+
+    .cute-button:hover {
+      background-color: var(--pastel-lavender);
+    }
   </style>
 </head>
 <body>
@@ -120,28 +153,40 @@
 
   <section id="home" class="section active">
     <h1>Welcome to My Skincare</h1>
-    <p>Your go-to destination for glowing, healthy skin with the cutest vibes!</p>
+    <p>
+      Discover a world where self-care meets science. At My Skincare, we blend gentle formulas with calming vibes to support your skin and soul.
+      Whether you're starting your skincare journey or are a seasoned enthusiast, we’re here with glowing advice, aesthetic products, and pastel-perfect vibes.
+    </p>
+    <a href="#products" class="cute-button">Shop Now</a>
   </section>
 
   <section id="about" class="section">
     <h2>About Us</h2>
-    <p>We believe skincare should be fun, calming, and effective. We combine pastel aesthetics with science-backed tips to help you achieve your best skin.</p>
+    <p>
+      At My Skincare, we’re passionate about helping people feel confident in their skin. 
+      Our mission is to provide effective, gentle skincare combined with aesthetics that bring joy. 
+      Each product and tip is selected to suit all skin types and to create a self-care experience that's both soothing and stylish.
+    </p>
+    <p>
+      With a pastel-inspired approach, our goal is to make skincare not just a routine, but a relaxing ritual. 
+      From beginners to skincare junkies — you're in the right place!
+    </p>
   </section>
 
   <section id="products" class="section">
     <h2>Skincare Products</h2>
-    <div class="product">Rose Water Mist</div>
-    <div class="product">Aloe Vera Gel</div>
-    <div class="product">Gentle Foaming Cleanser</div>
-    <div class="product">Pastel Lip Balm Set</div>
+    <div class="tip">Rose Water Mist</div>
+    <div class="tip">Aloe Vera Gel</div>
+    <div class="tip">Gentle Foaming Cleanser</div>
+    <div class="tip">Pastel Lip Balm Set</div>
   </section>
 
   <section id="tips" class="section">
     <h2>Skincare Tips</h2>
-    <div class="tip">Tip 1: Always remove makeup before sleeping.</div>
-    <div class="tip">Tip 2: Hydrate with cute water bottles!</div>
-    <div class="tip">Tip 3: Use sunscreen, even indoors.</div>
-    <div class="tip">Tip 4: Moisturize morning and night!</div>
+    <div class="tip">💧 Tip 1: Always remove makeup before sleeping.</div>
+    <div class="tip">🚰 Tip 2: Hydrate with cute water bottles!</div>
+    <div class="tip">☀️ Tip 3: Use sunscreen, even indoors.</div>
+    <div class="tip">🧴 Tip 4: Moisturize morning and night!</div>
   </section>
 
   <section id="contact" class="section">
@@ -169,3 +214,4 @@
   </script>
 </body>
 </html>
+
